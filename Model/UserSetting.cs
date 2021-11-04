@@ -11,7 +11,7 @@ namespace NAT.PY.Model
 {
     public class UserGetSetting : INotifyPropertyChanged
     {
-        private string _backGroundColor,_fontColor,_secondColor;
+        private string _backGroundColor,_fontColor;
 
         public string backGroundColor
         {

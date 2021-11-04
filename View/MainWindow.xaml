@@ -22,6 +22,16 @@
             <MenuItem Header="Windows"></MenuItem>
         </Menu>
 
-
+        <RichTextBox x:Name="EditorLineNumber" Margin="0,0,1425,-965" Grid.Row="1" BorderBrush="#FFE6E3E3" FontFamily="Arial" Block.LineHeight="1" Block.TextAlignment="Right" Foreground="#FF2891AF" FontSize="15" Background="#FFF9F9FA">
+            <FlowDocument>
+                <Paragraph>1000</Paragraph>
+                <Paragraph>1100</Paragraph>
+                <Paragraph>1</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="codeEditor" Margin="67,0,1070,-961" Grid.Row="1" RenderTransformOrigin="0.5,0.5" KeyUp="_EditorChanged" FontSize="15" Block.LineHeight="1" KeyDown="_EditorKeyDown" BorderBrush="White" FontFamily="Arial">
+            <FlowDocument>
+            </FlowDocument>
+        </RichTextBox>
     </Grid>
 </Window>
