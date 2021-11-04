@@ -61,7 +61,7 @@ namespace NAT.PY.Model
             string text = new TextRange(Editor.Document.ContentStart, Editor.Document.ContentEnd).Text;
 
             // Find Match in string
-            Regex regex = new Regex(@"\b(for|while|def|with|elif|else|except|finally|if|import|try|raise|return|yield|class|pass)\b");
+            Regex regex = new Regex(@"\b(for|while|def|with|elif|else|except|finally|range|print|if|import|try|raise|return|yield|class|pass)\b");
             MatchCollection kewWordsMatсhes = regex.Matches(text);
 
             Regex regexSecond = new Regex(@"\b(false|true|none|and|as|break|continue|del|from|global|in|is|lambda|nonlocal|not|or)\b");
@@ -74,13 +74,13 @@ namespace NAT.PY.Model
             foreach(Match match in kewWordsMatсhes)
             {
                 Editor.Selection.Select(GetTextPointerAtOffset(Editor, match.Index), GetTextPointerAtOffset(Editor, match.Index + match.Value.Length));
-                Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(101,178,198)));
+                Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(197,148,190)));
             }
 
             foreach (Match match in keySecondWord)
             {
                 Editor.Selection.Select(GetTextPointerAtOffset(Editor, match.Index), GetTextPointerAtOffset(Editor, match.Index + match.Value.Length));
-                Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(213, 114, 118)));
+                Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(236, 95, 100)));
             }
 
             // Return start value

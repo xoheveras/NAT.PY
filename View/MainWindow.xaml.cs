@@ -14,12 +14,6 @@ namespace NAT.PY
 
         private void _EditorChanged(object sender, KeyEventArgs e) => NAT.PY.Model.Editor.EditorChanged(codeEditor, EditorLineNumber);
 
-        private void _EditorKeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.Key == Key.Tab)
-            {
-                MessageBox.Show("gasg");
-            }
-        }
+        private void _EditorKeyDown(object sender, KeyEventArgs e) => NAT.PY.Model.EditorEvents.KeyDownEvent(codeEditor,e);
     }
 }
