@@ -66,7 +66,7 @@ namespace NAT.PY.Model
 
             string text = new TextRange(Editor.Document.ContentStart, Editor.Document.ContentEnd).Text;
 
-            // Find Match in string
+            // Find matches in a string
             Regex regex = new Regex(@"\b(for|while|def|with|elif|else|except|finally|range|print|if|import|try|raise|return|yield|class|pass)\b");
             MatchCollection kewWordsMatсhes = regex.Matches(text);
 
@@ -76,7 +76,7 @@ namespace NAT.PY.Model
             Regex regexComment = new Regex(@"[#]");
             MatchCollection keyComment = regexComment.Matches(text);
 
-            // Colored keyWord
+            // Keyword coloring
             var startCaretPos = Editor.CaretPosition;
             var startColorText = Editor.CaretBrush;
 
