@@ -14,7 +14,7 @@ You can try something like this too. An example of our implementation
 
 ``` csharp
 // Find matches in a string
-Regex regex = new Regex(@"\b(for|while|def\b");
+Regex regex = new Regex(@"\b(for|while|def\b)");
 MatchCollection keyWordsMatсhes = regex.Matches(text);
 
 // Keyword coloring
