@@ -7,7 +7,7 @@
 </div>
 
 > ### Perhaps interesting
-> This editor is based on regular expressions and chocolate chip cookies.
+> This editor is based on regular expressions and chocolate chip cookies 🍪
 <br>
 You can try something like this too. An example of our implementation
 <br><br>
