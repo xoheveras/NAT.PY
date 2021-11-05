@@ -58,6 +58,12 @@ namespace NAT.PY.Model
 
         static public void EditorChanged(RichTextBox Editor, RichTextBox EditorLineNumber)
         {
+            void Colored(Match match, byte R, byte G, byte B)
+            {
+                Editor.Selection.Select(GetTextPointerAtOffset(Editor, match.Index), GetTextPointerAtOffset(Editor, match.Index + match.Value.Length));
+                Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(R, G, B)));
+            }
+
             string text = new TextRange(Editor.Document.ContentStart, Editor.Document.ContentEnd).Text;
 
             // Find Match in string
@@ -67,19 +73,22 @@ namespace NAT.PY.Model
             Regex regexSecond = new Regex(@"\b(false|true|none|and|as|break|continue|del|from|global|in|is|lambda|nonlocal|not|or)\b");
             MatchCollection keySecondWord = regexSecond.Matches(text);
 
+            Regex regexComment = new Regex(@"[#]");
+            MatchCollection keyComment = regexComment.Matches(text);
+
             // Colored keyWord
             var startCaretPos = Editor.CaretPosition;
             var startColorText = Editor.CaretBrush;
 
             foreach(Match match in kewWordsMatсhes)
-            {
-                Editor.Selection.Select(GetTextPointerAtOffset(Editor, match.Index), GetTextPointerAtOffset(Editor, match.Index + match.Value.Length));
-                Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(197,148,190)));
-            }
+                Colored(match, 197,148,190);
 
             foreach (Match match in keySecondWord)
+                Colored(match, 236, 95, 100);
+
+            foreach (Match match in keyComment)
             {
-                Editor.Selection.Select(GetTextPointerAtOffset(Editor, match.Index), GetTextPointerAtOffset(Editor, match.Index + match.Value.Length));
+                Editor.Selection.Select(GetTextPointerAtOffset(Editor, match.Index), GetTextPointerAtOffset(Editor, text.IndexOf('\n', match.Index)));
                 Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(236, 95, 100)));
             }
 
