@@ -5,30 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NAT.PY"
         mc:Ignorable="d"
-        Title="MainWindow" Background="{Binding backGroundColor}" Height="1000" Width="1500" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="MainWindow" Background="{Binding backGroundColor}" AllowsTransparency="True" Height="1000" Width="1500" WindowStartupLocation="CenterScreen" WindowStyle="None" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+    <Window.Resources>
+        <ControlTemplate x:Key="NAPRichTextBox" TargetType="{x:Type RichTextBox}">
+            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{Binding backGroundColor}"/>
+                </Trigger>
+                <Trigger Property="IsKeyboardFocused" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{Binding backGroundColor}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="955"/>
         </Grid.RowDefinitions>
-        <Menu Height="25" VerticalAlignment="Top" Foreground="{Binding fontColor}" Background="{Binding backGroundColor}">
-            <MenuItem Header="File">
-                <MenuItem Header="New File"></MenuItem>
-                <MenuItem Header="Open File"></MenuItem>
-                <Separator />
-                <MenuItem Header="Save"></MenuItem>
-                <MenuItem Header="Save As"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Windows"></MenuItem>
-        </Menu>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="1300"/>
+        </Grid.ColumnDefinitions>
 
-        <RichTextBox x:Name="EditorLineNumber" Margin="0,0,1425,-965" Grid.Row="1" BorderBrush="#FFE6E3E3" FontFamily="Arial" Block.LineHeight="1" Block.TextAlignment="Right" Foreground="#FF2891AF" FontSize="18" Background="#FFF9F9FA">
-            <FlowDocument>
-            </FlowDocument>
-        </RichTextBox>
-        <RichTextBox x:Name="codeEditor" Margin="67,0,490,-961" Grid.Row="1" RenderTransformOrigin="0.5,0.5" KeyUp="_EditorChanged" FontSize="18" Block.LineHeight="1" KeyDown="_EditorKeyDown" BorderBrush="White" FontFamily="Arial">
-            <FlowDocument>
-            </FlowDocument>
-        </RichTextBox>
+        <TreeView Grid.RowSpan="2" Background="{Binding secondColor}">
+        </TreeView>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+            <StackPanel Background="{Binding backGroundColor}" Orientation="Horizontal">
+                <RichTextBox x:Name="EditorLineNumber" MinWidth="50" FontFamily="Arial" Block.LineHeight="1" Block.TextAlignment="Right" Foreground="{Binding fontColor}" FontSize="18" Background="{Binding backGroundColor}" BorderBrush="{x:Null}" IsEnabled="False">
+                    <FlowDocument>
+                    </FlowDocument>
+                </RichTextBox>
+                <RichTextBox x:Name="codeEditor" MinWidth="600" MaxWidth="1231"  KeyUp="_EditorChanged" FontSize="18" Block.LineHeight="1" KeyDown="_EditorKeyDown" Background="{Binding backGroundColor}" FontFamily="Arial" Foreground="{Binding fontColor}" BorderBrush="{x:Null}" SelectionBrush="White" Template="{DynamicResource NAPRichTextBox}">
+                    <FlowDocument IsEnabled="False" PageHeight="1000">
+                    </FlowDocument>
+                </RichTextBox>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

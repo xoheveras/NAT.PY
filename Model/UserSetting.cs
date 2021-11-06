@@ -11,7 +11,7 @@ namespace NAT.PY.Model
 {
     public class UserGetSetting : INotifyPropertyChanged
     {
-        private string _backGroundColor,_fontColor;
+        private string _backGroundColor,_fontColor,_secondColor,_secondTwoColor;
 
         public string backGroundColor
         {
@@ -38,12 +38,39 @@ namespace NAT.PY.Model
             }
         }
 
+        public string secondColor
+        {
+            get
+            {
+                return _secondColor;
+            }
+            set
+            {
+                _secondColor = value;
+            }
+        }
+
+        public string secondTwoColor
+        {
+            get
+            {
+                return _secondTwoColor;
+            }
+            set
+            {
+                _secondTwoColor = value;
+            }
+        }
+
+
         public UserGetSetting() => InitUserSetting();
 
         public void InitUserSetting()
         {
-            backGroundColor = "#FFFFFFFF";
-            fontColor = "#000";
+            backGroundColor = "#1E222A";
+            fontColor = "#969AA8";
+            secondColor = "#1B1F27";
+            secondTwoColor = "#252931";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

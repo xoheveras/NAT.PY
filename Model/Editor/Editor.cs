@@ -81,20 +81,20 @@ namespace NAT.PY.Model
             var startColorText = Editor.CaretBrush;
 
             foreach(Match match in kewWordsMatсhes)
-                Colored(match, 197,148,190);
+                Colored(match, 137,94,229);
 
             foreach (Match match in keySecondWord)
-                Colored(match, 236, 95, 100);
+                Colored(match, 100, 169, 235);
 
             foreach (Match match in keyComment)
             {
                 Editor.Selection.Select(GetTextPointerAtOffset(Editor, match.Index), GetTextPointerAtOffset(Editor, text.IndexOf('\n', match.Index)));
-                Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(236, 95, 100)));
+                Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(87, 135, 178)));
             }
 
             // Return start value
             Editor.CaretPosition = startCaretPos;
-            Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(0, 0, 0)));
+            Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(150,154, 168)));
 
             // Check Line
             EditorEvents.ChangedLineNumber(EditorLineNumber,Editor);
