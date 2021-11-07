@@ -106,7 +106,13 @@
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\4992.jpg" />
+    <Resource Include="View\images\Folder.png" />
+    <Resource Include="View\images\NoSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\images\Exit.png" />
+    <Resource Include="View\images\FullScrean.png" />
+    <Resource Include="View\images\Hide.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
