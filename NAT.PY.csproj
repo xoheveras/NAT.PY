@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="vendor\Editor\EditorModules\Highlights.cs" />
     <Compile Include="WindowWPF\SimpleEditorWindow.xaml.cs">
       <DependentUpon>SimpleEditorWindow.xaml</DependentUpon>
     </Compile>
@@ -118,5 +119,6 @@
   <ItemGroup>
     <Resource Include="vendor\image\Logo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

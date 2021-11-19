@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Project\Test\obj\Debug\
+D:\Project\Git\NAT.PY\obj\Debug\
 Test
 none
 false
 DEBUG;TRACE
-D:\Project\Test\App.xaml
+D:\Project\Git\NAT.PY\App.xaml
 4-414275931
 
-9-411700909
+101276039395
 13-1505183044
 WindowWPF\CreateProjectWindow.xaml;WindowWPF\MainWindow.xaml;WindowWPF\SimpleEditorWindow.xaml;WindowWPF\UIEditorWindow.xaml;
 
-False
+True
 

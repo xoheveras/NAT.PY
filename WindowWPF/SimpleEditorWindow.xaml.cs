@@ -11,8 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using NATPY.vendor.Editor.EditorModules;
 
-namespace Test.WindowWPF
+namespace NAT.PY.WindowWPF
 {
     /// <summary>
     /// Логика взаимодействия для SimpleEditorWindow.xaml
@@ -23,5 +24,12 @@ namespace Test.WindowWPF
         {
             InitializeComponent();
         }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void Editor_KeyDown(object sender, KeyEventArgs e) => Highlights.HighlightsLine(Editor,Testa);
     }
 }
