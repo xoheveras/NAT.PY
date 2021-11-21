@@ -25,7 +25,7 @@
 - [ ] Closing the application
 - [ ] Minimizing the application
 - [ ] Opening an app in full screen
-- [ ] File creation
+- [ ] File creation 
 - [ ] Opening a file
 - [ ] Saving a file
 - [ ] Folder hierarchy
