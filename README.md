@@ -36,7 +36,7 @@
 - [ ] Compiling to exe
   ## To-do Editor
 
-✓ Solve line wrapping problem
+✓ Solve line wrapping problem <br>
 ✓ Syntax highlighting !(no async)
 - [ ] Count lines in a document !(no async)
 - [ ] Typing hints
