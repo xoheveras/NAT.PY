@@ -25,7 +25,7 @@
 - [ ] Closing the application
 - [ ] Minimizing the application
 - [ ] Opening an app in full screen
-- [ ] File creation
+- [ ] File creation 
 - [ ] Opening a file
 - [ ] Saving a file
 - [ ] Folder hierarchy
@@ -36,7 +36,7 @@
 - [ ] Compiling to exe
   ## To-do Editor
 
-- [ ] Solve line wrapping problem
+✓ Solve line wrapping problem
 - [ ] Count lines in a document (async)
 - [ ] Syntax highlighting + convenient language addition (async)
 - [ ] Typing hints
@@ -45,5 +45,4 @@
 - [ ] Tab = 4 spaces
 - [ ] ctrl + mouse wheel you can edit the font
 - [ ] Hiding unnecessary parts of the code
- 
-- [x] Test
+
