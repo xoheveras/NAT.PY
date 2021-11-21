@@ -13,7 +13,7 @@
             </Border>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                    <Setter Property="Opacity" TargetName="border" Value="1"/>
                 </Trigger>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="BorderBrush" TargetName="border" Value="#1E222A"/>
@@ -26,7 +26,7 @@
     </Window.Resources>
     <Grid Background="#FF252931" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="165" Width="165*"/>
+            <ColumnDefinition MinWidth="165" Width="165*" MaxWidth="165"/>
             <ColumnDefinition Width="835*"/>
             <ColumnDefinition MinWidth="121" Width="121*"/>
         </Grid.ColumnDefinitions>
@@ -34,7 +34,7 @@
             <RowDefinition MinHeight="29" Height="25*"/>
             <RowDefinition MinHeight="338" Height="681*"/>
         </Grid.RowDefinitions>
-        <Menu Height="auto" Width="162" Background="#FF252931" Foreground="#FFA6A6A6" FontFamily="Montserrat Medium" MinHeight="30" Grid.Row="0" HorizontalAlignment="Stretch" Grid.RowSpan="2">
+        <Menu Height="auto" Width="162" Background="#FF252931" Foreground="#FFA6A6A6" FontFamily="Montserrat Medium" MinHeight="30" Grid.Row="0" HorizontalAlignment="Left" Grid.RowSpan="2">
             <MenuItem Header="File" Margin="0,5,0,0" Foreground="#FFA6A6A6" IsTabStop="False">
                 <MenuItem Header="New Project" />
                 <MenuItem Header="Open" >
@@ -44,45 +44,36 @@
             </MenuItem>
             <MenuItem Header="View" Margin="0,5,0,0" Foreground="#FFA6A6A6" IsTabStop="False"/>
             <MenuItem Header="Tool" Margin="0,5,0,0" Foreground="#FFA6A6A6" IsTabStop="False"/>
-            <MenuItem Header="Run" Margin="0,5,0,0" Foreground="#FFA6A6A6" IsTabStop="False"/>
+            <MenuItem Header="Run" Margin="0,5,0,0" Foreground="#FFA6A6A6" IsTabStop="False" Click="Run"/>
         </Menu>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
-            <Label x:Name="Testa" Content="Label"/>
-        </StackPanel>
-        <DockPanel Grid.Column="1" HorizontalAlignment="Stretch" Height="auto" LastChildFill="True" Grid.Row="1" VerticalAlignment="Stretch" Width="auto" Grid.ColumnSpan="2" Margin="0,0,1,0">
-            <ScrollViewer Height="auto" VerticalScrollBarVisibility="Auto"  VerticalAlignment="Stretch" Width="auto" HorizontalAlignment="Stretch">
-                <Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1"/>
+        <DockPanel Grid.Column="1" HorizontalAlignment="Left" Height="auto" LastChildFill="True" Grid.Row="1" VerticalAlignment="Stretch" Width="auto" Grid.ColumnSpan="2" Margin="0,0,1,0">
+            <ScrollViewer Height="auto" VerticalScrollBarVisibility="Auto"  VerticalAlignment="Stretch" Width="auto" HorizontalAlignment="Left">
+                <Grid HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="12*"/>
                         <ColumnDefinition Width="179*"/>
                     </Grid.ColumnDefinitions>
-                    <RichTextBox Grid.Column="0" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Stretch" Width="60" MinWidth="10.4" Template="{StaticResource NATRich}" Foreground="#FFA6A6A6" Block.TextAlignment="Right" FontFamily="Montserrat Medium" FontSize="15">
+                    <RichTextBox x:Name="lineEditor" Grid.Column="0" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Stretch" Width="60" MinWidth="10.4" Template="{StaticResource NATRich}" Foreground="#FFA6A6A6" Block.TextAlignment="Right" FontFamily="Montserrat Medium" FontSize="15" FontWeight="Bold" Block.LineHeight="1" IsEnabled="False">
                         <FlowDocument>
                             <Paragraph>
-                                <Run Text="1"/>
-                                <LineBreak></LineBreak>
-                                <Run Text="2"/>
-                                <LineBreak></LineBreak>
-                                <Run Text="3"/>
-                                <LineBreak></LineBreak>
-                                <Run Text="4"/><LineBreak></LineBreak>
                             </Paragraph>
                         </FlowDocument>
                     </RichTextBox>
                     <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
-                        <RichTextBox x:Name="Editor" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="1000" Grid.Column="1" Template="{StaticResource NATRich}" Foreground="#FFA6A6A6"  KeyDown="Editor_KeyDown" FontFamily="Montserrat Medium" FontSize="15">
-                        <FlowDocument>
-                            <Paragraph>
-                                <Run Text="RichTextBox"/>
-                            </Paragraph>
-                        </FlowDocument>
+                        <RichTextBox x:Name="Editor" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="1665" Grid.Column="1" Template="{StaticResource NATRich}" Foreground="#FFA6A6A6" FontFamily="Montserrat Medium" FontSize="15" FontWeight="Bold" Block.LineHeight="1" KeyUp="Editor_KeyDown">
+                            <FlowDocument>
+                                <Paragraph>
+                                    <Run Text="RichTextBox"/>
+                                </Paragraph>
+                            </FlowDocument>
                         </RichTextBox>
                     </ScrollViewer>
                 </Grid>
 
             </ScrollViewer>
         </DockPanel>
-        <TreeView HorizontalAlignment="Stretch" Height="auto" Grid.Row="1" VerticalAlignment="Stretch" Width="auto" Background="#FF1B1F27" BorderBrush="#FF1B1F27" Foreground="#FFA6A6A6" IsTabStop="False"/>
+        <TreeView MaxWidth="165" Height="auto" Grid.Row="1" VerticalAlignment="Stretch" Width="165" Background="#FF1B1F27" BorderBrush="#FF1B1F27" Foreground="#FFA6A6A6" IsTabStop="False" HorizontalAlignment="Left"/>
 
     </Grid>
 </Window>

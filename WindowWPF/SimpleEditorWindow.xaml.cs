@@ -15,9 +15,6 @@ using NATPY.vendor.Editor.EditorModules;
 
 namespace NAT.PY.WindowWPF
 {
-    /// <summary>
-    /// Логика взаимодействия для SimpleEditorWindow.xaml
-    /// </summary>
     public partial class SimpleEditorWindow : Window
     {
         public SimpleEditorWindow()
@@ -30,6 +27,19 @@ namespace NAT.PY.WindowWPF
             this.DragMove();
         }
 
-        private void Editor_KeyDown(object sender, KeyEventArgs e) => Highlights.HighlightsLine(Editor,Testa);
+        private void Editor_KeyDown(object sender, KeyEventArgs e)
+        {
+            Highlights.HighlightsLine(Editor, lineEditor);
+
+            if (e.Key == Key.Enter)
+                KeyEvents.KeyEnter();
+            if (e.Key == Key.Tab)
+                KeyEvents.KeyTab(Editor);
+        }
+
+        private void Run(object sender, RoutedEventArgs e)
+        {
+            Highlights.OpenHighlights(Editor, lineEditor);
+        }
     }
 }

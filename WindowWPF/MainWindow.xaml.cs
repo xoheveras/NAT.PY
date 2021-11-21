@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using NAT.PY.WindowWPF;
-//1129 714
+
 namespace NAT.PY
 {
     public partial class MainWindow : Window
@@ -21,19 +21,14 @@ namespace NAT.PY
         public MainWindow()
         {
             InitializeComponent();
-
-            SimpleEditorWindow editorWindow = new SimpleEditorWindow();
-            editorWindow.Show();
         }
 
 
         private void ShowCreateProject(object sender, RoutedEventArgs e)
         {
-            if(Application.Current.Windows.OfType<CreateProjectWindow>().FirstOrDefault() == null)
-            {
-                CreateProjectWindow modalWindow = new CreateProjectWindow();
-                modalWindow.Show();
-            }
+            SimpleEditorWindow editorWindow = new SimpleEditorWindow();
+            editorWindow.Show();
+            this.Hide();
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
