@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![OpenSourse](https://img.shields.io/badge/NAT.PY%20Editor-v0.1.1-blueviolet)
+![OpenSourse](https://img.shields.io/badge/NAT.PY%20Editor-v0.1.2-blueviolet)
   
 </div>
 
