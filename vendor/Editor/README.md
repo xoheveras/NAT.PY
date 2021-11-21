@@ -25,3 +25,7 @@ foreach (Match match in keyWordsMatсhes)
 }
 
 ```
+
+### Example of work
+
+<img width="800" height="500" src="https://github.com/xoheveras/xoheveras/blob/master/Readme/Images/2021-11-21-21-37-02.gif">
