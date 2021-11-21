@@ -37,8 +37,8 @@
   ## To-do Editor
 
 ✓ Solve line wrapping problem
-- [ ] Count lines in a document !(no async)
 ✓ Syntax highlighting !(no async)
+- [ ] Count lines in a document !(no async)
 - [ ] Typing hints
 - [ ] Tooltips when hovering over an element .. according to the principle (def (int cost, string text))
 - [ ] Automatic there after:
