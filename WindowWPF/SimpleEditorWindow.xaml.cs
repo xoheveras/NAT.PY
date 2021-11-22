@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,12 +12,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using NATPY.vendor.Editor.EditorModules;
 
 namespace NAT.PY.WindowWPF
 {
     public partial class SimpleEditorWindow : Window
     {
+        public string fileSelected;
+        public string fileSelectedPath;
+
         public SimpleEditorWindow()
         {
             InitializeComponent();
@@ -35,6 +40,34 @@ namespace NAT.PY.WindowWPF
                 KeyEvents.KeyEnter();
             if (e.Key == Key.Tab)
                 KeyEvents.KeyTab(Editor);
+
+            if(e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.S)
+            {
+                MessageBox.Show("save");
+
+                if(fileSelected == "unknown" || fileSelectedPath == "")
+                {
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Python|*.py";
+                    if (saveFileDialog.ShowDialog() == true)
+                    {
+                        TextRange text = new TextRange(Editor.Document.ContentStart, Editor.Document.ContentEnd);
+                        FileStream filesystem = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                        text.Save(filesystem, DataFormats.Text);
+                        filesystem.Close();
+
+                        fileSelectedPath = saveFileDialog.FileName;
+                        fileSelected = saveFileDialog.FileName;
+                    }
+                }
+                else
+                {
+                    TextRange text = new TextRange(Editor.Document.ContentStart, Editor.Document.ContentEnd);
+                    FileStream filesystem = new FileStream(fileSelectedPath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    text.Save(filesystem, DataFormats.Text);
+                    filesystem.Close();
+                }
+            }
         }
 
         private void Run(object sender, RoutedEventArgs e)

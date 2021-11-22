@@ -5,18 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NAT.PY"
         mc:Ignorable="d"
-        Title="MainWindow" Height="609" Width="1028" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#FF1E222A" ShowInTaskbar="False" ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        Title="MainWindow" AllowDrop="True" Drop="FileDrop" Height="609" Width="1028" WindowStartupLocation="CenterScreen" Background="#FF1E222A" MouseLeftButtonDown="Window_MouseLeftButtonDown" ResizeMode="NoResize" WindowStyle="None" Icon="/Test;component/vendor/image/Icon.png">
     <Grid>
         <Menu Height="25" VerticalAlignment="Top" Background="#FF252931" Foreground="#FFA6A6A6" FontFamily="Montserrat Medium">
-            <MenuItem Header="File" Margin="0,4,0,0" Foreground="#FFA6A6A6">
-                <MenuItem Click="ShowCreateProject" Header="New Project" ></MenuItem>
-                <MenuItem Header="Open" >
-                    <MenuItem Header="Open Project"></MenuItem>
-                    <MenuItem Header="Open File" ></MenuItem>
+            <MenuItem Header="File" Margin="0,4,0,0" Foreground="#FFA6A6A6" >
+                <MenuItem Click="CreateProject" Header="New Project" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" ></MenuItem>
+                <MenuItem Header="Open" Foreground="Black" >
+                    <MenuItem Header="Open File" Click="OpenFile" ></MenuItem>
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <Image MinWidth="162" Source="/vendor/image/Logo.png" Margin="419.99,254,446.01,296.49" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58.51" Width="162" MinHeight="58.51" />
+        <Image AllowDrop="True" Drop="FileDrop" MinWidth="162" Source="/vendor/image/Logo.png" Margin="419.99,254,446.01,296.49" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58.51" Width="162" MinHeight="58.51" />
         <TextBlock HorizontalAlignment="Left" Height="31.111" Margin="381.99,313.51,0,0" TextWrapping="Wrap" Text="Проекты не обнаружены" VerticalAlignment="Top" Width="243" Foreground="#FF3E4452" FontSize="18" FontFamily="Montserrat Medium" MinWidth="243" MinHeight="31.111"/>
     </Grid>
 </Window>
