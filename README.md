@@ -17,16 +17,16 @@
 - [ ] Creating the rest of the components
 - [ ] Editing components using css or switches in the inspector
   ## To-do App
-- [ ] Arrange objects
-- [ ] Making space for design
+✓ Arrange objects <br>
+✓ Making space for design
 - [ ] Creating an inspector
 - [ ] Creating Components
 - [ ] Make adaptive
 - [ ] Closing the application
 - [ ] Minimizing the application
 - [ ] Opening an app in full screen
-- [ ] File creation 
-- [ ] Opening a file
+- [ ] File creation <br>
+✓ Opening a file
 - [ ] Saving a file
 - [ ] Folder hierarchy
 - [ ] Folder icons
@@ -42,7 +42,7 @@
 - [ ] Typing hints
 - [ ] Tooltips when hovering over an element .. according to the principle (def (int cost, string text))
 - [ ] Automatic there after:
-- [ ] Tab = 4 spaces
+✓ Tab = 4 spaces
 - [ ] ctrl + mouse wheel you can edit the font
 - [ ] Hiding unnecessary parts of the code
 
