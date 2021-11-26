@@ -6,8 +6,7 @@ using System.Windows.Input;
 using Microsoft.Win32;
 using NAT.PY.WindowWPF;
 using NATPY.vendor.Editor.EditorModules;
-using System.Threading;
-using System.Windows.Controls;
+using NATPY.vendor.Editor.Tree;
 
 namespace NAT.PY
 {
@@ -18,16 +17,9 @@ namespace NAT.PY
             InitializeComponent();
         }
 
-
         private void CreateProject(object sender, RoutedEventArgs e)
         {
             SimpleEditorWindow editorWindow = new SimpleEditorWindow();
-
-            var item = new TreeViewItem();
-            item.Header = "unknown";
-            editorWindow.fileSelected = "unknown";
-            editorWindow.FileTree.Items.Insert(1, item);
-
             editorWindow.Show();
             this.Hide();
         }
@@ -77,6 +69,7 @@ namespace NAT.PY
                 range.ClearAllProperties();
 
                 Highlights.OpenHighlights(editorWindow.Editor, editorWindow.lineEditor);
+                Tree.addRecent(files[0], editorWindow.FileTree);
 
                 editorWindow.Show();
                 this.Hide();

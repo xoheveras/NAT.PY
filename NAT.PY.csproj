@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -57,16 +60,10 @@
     </ApplicationDefinition>
     <Compile Include="vendor\Editor\EditorModules\Highlights.cs" />
     <Compile Include="vendor\Editor\EditorModules\KeyEvents.cs" />
+    <Compile Include="vendor\Editor\Tree\Tree.cs" />
     <Compile Include="WindowWPF\SimpleEditorWindow.xaml.cs">
       <DependentUpon>SimpleEditorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowWPF\UIEditorWindow.xaml.cs">
-      <DependentUpon>UIEditorWindow.xaml</DependentUpon>
-    </Compile>
-    <Page Include="WindowWPF\CreateProjectWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="WindowWPF\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,18 +72,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WindowWPF\CreateProjectWindow.xaml.cs">
-      <DependentUpon>CreateProjectWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WindowWPF\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="WindowWPF\SimpleEditorWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowWPF\UIEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,6 +99,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

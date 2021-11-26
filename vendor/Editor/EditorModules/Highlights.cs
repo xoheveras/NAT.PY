@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
@@ -12,7 +8,6 @@ namespace NATPY.vendor.Editor.EditorModules
 {
     static class Highlights
     {
-        //static int lineCount = 1;
 
         public static void LineColored(RichTextBox Editor, string regexText, byte r, byte g, byte b, string text, int start = 0, int end = 0)
         {
@@ -28,6 +23,7 @@ namespace NATPY.vendor.Editor.EditorModules
                     Editor.Selection.Select(GetTextPointerAtOffset(Editor, start + match.Index), GetTextPointerAtOffset(Editor, start + match.Index + (match.Value.Length + end)));
                 else
                     Editor.Selection.Select(GetTextPointerAtOffset(Editor, start + match.Index), GetTextPointerAtOffset(Editor, start + match.Index + match.Value.Length));
+
                 Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(r, g, b)));
             }
         }
@@ -70,8 +66,7 @@ namespace NATPY.vendor.Editor.EditorModules
 
                 navigator = navigator.GetPositionAtOffset(1, LogicalDirection.Forward);
 
-            } // End while.
-
+            }
             return navigator;
         }
 
@@ -81,10 +76,11 @@ namespace NATPY.vendor.Editor.EditorModules
 
             string text = new TextRange(Editor.Document.ContentStart, Editor.Document.ContentEnd).Text;
 
-            // Colored keyWord
+            // Writing start value
             var startCaretPos = Editor.CaretPosition;
             var startColorText = Editor.CaretBrush;
 
+            // Colored keyWord
             LineColored(Editor, @".*", 240, 246, 252, text);
             LineColored(Editor, @"\b(and|with|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|yield)\b", 255, 123, 114, text);
             LineColored(Editor, @"\b\w*[(]", 255, 166, 87, text);
@@ -93,19 +89,7 @@ namespace NATPY.vendor.Editor.EditorModules
 
             // Return start value
             Editor.CaretPosition = startCaretPos;
-            Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(166, 166, 166)));
-
-            // Create Line
-           /* Editor.CaretPosition = Editor.Document.ContentEnd;
-            Editor.CaretPosition.GetLineStartPosition(-int.MaxValue, out int lineNumber);
-            Editor.CaretPosition = startCaretPos;
-            //Trace.WriteLine((lineNumber * -1 + 2)-1);
-            lineEditor.Document.Blocks.Clear();
-            for (int i = 1; i < lineNumber * -1 + 2; i++)
-            {
-                lineEditor.Document.Blocks.Add(new Paragraph(new Run(i.ToString())));
-            }
-            lineCount = lineNumber * -1 + 2;*/
+            Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(240, 246, 252)));
 
             Editor.EndChange();
         }
@@ -127,10 +111,11 @@ namespace NATPY.vendor.Editor.EditorModules
             startPosInt = range.Text.Length;
             string text = new TextRange(startPos, endPos).Text;
 
-            // Colored keyWord
+            // Writing start value
             var startCaretPos = Editor.CaretPosition;
             var startColorText = Editor.CaretBrush;
 
+            // Colored keyWord
             LineColored(Editor, @".*", 240, 246, 252, text, startPosInt);
             LineColored(Editor, @"\b(and|with|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|yield)\b", 255, 123, 114, text, startPosInt);
             LineColored(Editor, @"\b\w*[(]", 255, 166, 87, text, startPosInt, -1);
@@ -139,32 +124,8 @@ namespace NATPY.vendor.Editor.EditorModules
 
             // Return start value
             Editor.CaretPosition = startCaretPos;
-            Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(166, 166, 166)));
-
-            // Count Line
-            /* Editor.CaretPosition = Editor.Document.ContentEnd;
-             Editor.CaretPosition.GetLineStartPosition(-int.MaxValue, out int lineNumber);
-             Editor.CaretPosition = caretPos;
-
-             //Update Line
-             if(lineNumber * -1 + 2 != lineCount)
-             {
-                 if(lineNumber * -1 + 2 > lineCount)
-                 {
-                     for (int i = lineCount; i < lineCount + (lineNumber * -1 + 2) - lineCount; i++)
-                         lineEditor.Document.Blocks.Add(new Paragraph(new Run(i.ToString())));
-
-                     lineCount = lineNumber * -1 + 2;
-                 }
-                 else
-                 {
-                     for (int i = 0; i < lineCount - (lineNumber * -1 + 2); i++)
-                         lineEditor.Document.Blocks.Remove(lineEditor.Document.Blocks.LastBlock);
-                     lineCount = lineNumber * -1 + 2;
-                 }
-             }*/
-
-         Editor.EndChange();
+            Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(240, 246, 252)));
+            Editor.EndChange();
         }
     }
 }
