@@ -10,8 +10,6 @@ namespace NAT.PY.WindowWPF
 {
     public partial class SimpleEditorWindow : Window
     {
-        public string fileSelected;
-        public string fileSelectedPath;
 
         public SimpleEditorWindow()
         {
@@ -26,44 +24,19 @@ namespace NAT.PY.WindowWPF
         private void Editor_KeyDown(object sender, KeyEventArgs e)
         {
             Highlights.HighlightsLine(Editor, lineEditor);
-
+ 
             if (e.Key == Key.Enter)
-                KeyEvents.KeyEnter();
-            if (e.Key == Key.Tab)
-                KeyEvents.KeyTab(Editor);
-
-            if(e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.S)
             {
-                MessageBox.Show("save");
-
-                if(fileSelected == "unknown" || fileSelectedPath == "")
-                {
-                    SaveFileDialog saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.Filter = "Python|*.py";
-                    if (saveFileDialog.ShowDialog() == true)
-                    {
-                        TextRange text = new TextRange(Editor.Document.ContentStart, Editor.Document.ContentEnd);
-                        FileStream filesystem = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                        text.Save(filesystem, DataFormats.Text);
-                        filesystem.Close();
-
-                        fileSelectedPath = saveFileDialog.FileName;
-                        fileSelected = saveFileDialog.FileName;
-                    }
-                }
-                else
-                {
-                    TextRange text = new TextRange(Editor.Document.ContentStart, Editor.Document.ContentEnd);
-                    FileStream filesystem = new FileStream(fileSelectedPath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                    text.Save(filesystem, DataFormats.Text);
-                    filesystem.Close();
-                }
+                KeyEvents.KeyEnter(Editor);
             }
+            else if (e.Key == Key.Tab)
+                KeyEvents.KeyTab(Editor);
+            else if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.S) 
+                return;
+            else if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.A)
+                KeyEvents.KeyCtrlS(Editor);
         }
 
-        private void Run(object sender, RoutedEventArgs e)
-        {
-            Highlights.OpenHighlights(Editor, lineEditor);
-        }
+        private void Run(object sender, RoutedEventArgs e) => Highlights.OpenHighlights(Editor, lineEditor);
     }
 }
