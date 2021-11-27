@@ -92,6 +92,10 @@ namespace NATPY.vendor.Editor.EditorModules
             Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(240, 246, 252)));
 
             Editor.EndChange();
+
+            lineEditor.BeginChange();
+            LineMeneger.CountLines(Editor, lineEditor);
+            lineEditor.EndChange();
         }
 
         public static void HighlightsLine(RichTextBox Editor, RichTextBox lineEditor)
@@ -126,6 +130,10 @@ namespace NATPY.vendor.Editor.EditorModules
             Editor.CaretPosition = startCaretPos;
             Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(240, 246, 252)));
             Editor.EndChange();
+
+            lineEditor.BeginChange();
+            LineMeneger.CountLines(Editor,lineEditor);
+            lineEditor.EndChange();
         }
     }
 }

@@ -60,6 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="vendor\Editor\EditorModules\Highlights.cs" />
     <Compile Include="vendor\Editor\EditorModules\KeyEvents.cs" />
+    <Compile Include="vendor\Editor\EditorModules\LineMeneger.cs" />
     <Compile Include="vendor\Editor\Tree\Tree.cs" />
     <Compile Include="WindowWPF\SimpleEditorWindow.xaml.cs">
       <DependentUpon>SimpleEditorWindow.xaml</DependentUpon>

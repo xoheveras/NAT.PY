@@ -26,15 +26,40 @@ namespace NATPY.vendor.Editor.EditorModules
             startPosInt = range.Text.Length;
             string text = new TextRange(startPos, endPos).Text;
 
-            MessageBox.Show(text);
-            MessageBox.Show(text.Contains(":").ToString());
 
             if (text.Contains(":"))
             {
-                MessageBox.Show("Я нашел :");
-                Editor.CaretPosition.InsertLineBreak();
-                Editor.CaretPosition.InsertTextInRun("  ");
+                int countTabs = 0;
+                for (int i = 0; i < text.Length; i++)
+                {
+                    if (text[i] != ' ')
+                        break;
+                    else countTabs++;
+                }
+
+                try
+                {
+                    //Editor.CaretPosition.InsertTextInRun("\r\n");
+                    Editor.CaretPosition.InsertTextInRun(Environment.NewLine);
+                    Editor.CaretPosition = caretPos.GetLineStartPosition(1);
+                    Editor.CaretPosition.InsertTextInRun(String.Concat(Enumerable.Repeat(" ", countTabs + 4)));
+                }
+                catch { }
             }
+            else
+            {
+                try 
+                {
+                    Editor.CaretPosition.InsertTextInRun(Environment.NewLine);
+                    Editor.CaretPosition = caretPos.GetLineStartPosition(1);
+                }
+                catch { }
+        }
+        }
+        public static void KeyCtrlV(RichTextBox editor)
+        {
+            string s = (string)Clipboard.GetDataObject().GetData(DataFormats.Text);
+            editor.Document.Blocks.Add(new Paragraph(new Run(s)));
         }
         public static void KeyCtrlS(RichTextBox editor) => editor.Selection.Select(editor.Document.ContentStart, editor.Document.ContentEnd);
         public static void KeyTab(RichTextBox Editor) => Editor.CaretPosition.InsertTextInRun("  ");
