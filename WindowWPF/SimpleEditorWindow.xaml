@@ -344,7 +344,7 @@
                             <Paragraph></Paragraph>
                         </FlowDocument>
                     </RichTextBox>
-                    <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+                    <ScrollViewer x:Name="ScrollView" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
                         <RichTextBox x:Name="Editor" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="1665" Grid.Column="1" Template="{StaticResource NATRich}" Foreground="#FFA6A6A6" FontFamily="Consolas" FontSize="15" FontWeight="Bold" Block.LineHeight="1" KeyUp="Editor_KeyDown" CaretBrush="White" KeyDown="Editor_KeyDownEvent" AcceptsReturn="False">
                             <FlowDocument>
                                 <Paragraph>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using Microsoft.Win32;
@@ -35,6 +36,14 @@ namespace NAT.PY.WindowWPF
 
         private void Editor_KeyDownEvent(object sender, KeyEventArgs e)
         {
+            // Вынести в отдельный файл
+            Rect Example = Editor.CaretPosition.GetCharacterRect(LogicalDirection.Forward);
+            ListBox test = new ListBox();
+            //test.Margin = new Thickness(Example.X, -Example.Y, 0, 0);
+            //test.Height = 100;
+            //test.Width = 100;
+            //test.Focus();
+
             if (e.Key == Key.Enter)
             {
                 KeyEvents.KeyEnter(Editor);
