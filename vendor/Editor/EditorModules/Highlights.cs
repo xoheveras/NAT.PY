@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
@@ -93,9 +94,9 @@ namespace NATPY.vendor.Editor.EditorModules
 
             Editor.EndChange();
 
-            lineEditor.BeginChange();
-            LineMeneger.CountLines(Editor, lineEditor);
-            lineEditor.EndChange();
+            //lineEditor.BeginChange();
+            //LineMeneger.CountLines(Editor, lineEditor);
+            //lineEditor.EndChange();
         }
 
         public static void HighlightsLine(RichTextBox Editor, RichTextBox lineEditor)
@@ -124,6 +125,7 @@ namespace NATPY.vendor.Editor.EditorModules
             LineColored(Editor, @"\b(and|with|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|yield)\b", 255, 123, 114, text, startPosInt);
             LineColored(Editor, @"\b\w*[(]", 255, 166, 87, text, startPosInt, -1);
             LineColored(Editor, @"\x27.*\x27|\x22.*\x22", 165, 214, 255, text, startPosInt);
+            LineColored(Editor, @"(?<=\x27)(.*)(?=\x27)", 165, 214, 255, text, startPosInt);
             LineColored(Editor, @"^#.*", 139, 148, 158, text, startPosInt);
 
             // Return start value
@@ -131,9 +133,9 @@ namespace NATPY.vendor.Editor.EditorModules
             Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(240, 246, 252)));
             Editor.EndChange();
 
-            lineEditor.BeginChange();
-            LineMeneger.CountLines(Editor,lineEditor);
-            lineEditor.EndChange();
+            //lineEditor.BeginChange();
+            //LineMeneger.CountLines(Editor,lineEditor);
+            //lineEditor.EndChange();
         }
     }
 }

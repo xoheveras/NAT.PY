@@ -44,7 +44,7 @@ namespace NAT.PY
                 }
                 range.ClearAllProperties();
 
-                Highlights.OpenHighlights(editorWindow.Editor, editorWindow.lineEditor);
+                Highlights.OpenHighlights(editorWindow.Editor, editorWindow.Editor);
 
                 editorWindow.Show();
                 this.Hide();
@@ -68,7 +68,7 @@ namespace NAT.PY
                 }
                 range.ClearAllProperties();
 
-                Highlights.OpenHighlights(editorWindow.Editor, editorWindow.lineEditor);
+                Highlights.OpenHighlights(editorWindow.Editor, editorWindow.Editor);
                 Tree.addRecent(files[0], editorWindow.FileTree);
 
                 editorWindow.Show();
