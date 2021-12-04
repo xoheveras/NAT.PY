@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="core\controls\NatPyEditor\highlights.cs" />
+    <Compile Include="core\controls\NatPyEditor\LinesCount.cs" />
     <Compile Include="core\interface\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,16 +67,25 @@
     <Compile Include="core\controls\NatPyEditor\NatPyEditor.Designer.cs">
       <DependentUpon>NatPyEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="core\controls\NatPyTabs\NatPyTabs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="core\controls\NatPyTabs\NatPyTabs.Designer.cs">
+      <DependentUpon>NatPyTabs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="core\controls\NatPyEditor\NatPyEditor.resx">
+      <DependentUpon>NatPyEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\controls\NatPyTabs\NatPyTabs.resx">
+      <DependentUpon>NatPyTabs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="core\interface\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="core\controls\NatPyMenu\NatPyMenu.resx">
       <DependentUpon>NatPyMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="core\controls\NatPyEditor\NatPyEditor.resx">
-      <DependentUpon>NatPyEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="core\controls\NatPyTree\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
