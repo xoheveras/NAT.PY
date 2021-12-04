@@ -10,13 +10,15 @@ using System.Windows.Forms;
 
 namespace NATPY
 {
-    public partial class Home : Form
+    public partial class Editor : Form
     {
-        public Home()
+        public Editor()
         {
             InitializeComponent();
-            Editor test = new Editor();
-            test.Show();
+        }
+
+        private void Editor_Load(object sender, EventArgs e)
+        {
         }
     }
 }
