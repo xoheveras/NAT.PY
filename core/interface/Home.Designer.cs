@@ -30,6 +30,7 @@ namespace NATPY
         private void InitializeComponent()
         {
             this.natPyMenu1 = new NATPY.NatPyMenu();
+            this.natPyEditor1 = new NATPY.NatPyEditor();
             this.SuspendLayout();
             // 
             // natPyMenu1
@@ -48,12 +49,20 @@ namespace NATPY
             this.natPyMenu1.Size = new System.Drawing.Size(815, 24);
             this.natPyMenu1.TabIndex = 0;
             // 
+            // natPyEditor1
+            // 
+            this.natPyEditor1.Location = new System.Drawing.Point(33, 59);
+            this.natPyEditor1.Name = "natPyEditor1";
+            this.natPyEditor1.Size = new System.Drawing.Size(503, 380);
+            this.natPyEditor1.TabIndex = 1;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(34)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(815, 517);
+            this.Controls.Add(this.natPyEditor1);
             this.Controls.Add(this.natPyMenu1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
@@ -67,6 +76,7 @@ namespace NATPY
         #endregion
 
         private NatPyMenu natPyMenu1;
+        private NatPyEditor natPyEditor1;
     }
 }
 
