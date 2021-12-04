@@ -41,7 +41,6 @@ namespace NATPY
             this.natPyMenu1.BorderItemColor_ = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(49)))));
             this.natPyMenu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.natPyMenu1.FontColor_ = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.natPyMenu1.isEditor = false;
             this.natPyMenu1.Location = new System.Drawing.Point(0, 0);
             this.natPyMenu1.Name = "natPyMenu1";
             this.natPyMenu1.OpenMenuColor_ = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(29)))), ((int)(((byte)(35)))));

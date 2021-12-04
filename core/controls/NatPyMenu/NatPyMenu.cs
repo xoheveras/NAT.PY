@@ -16,14 +16,21 @@ namespace NATPY
         #region Properties
 
         /* Menu custom color */
-        public Color BackColor_ { get; set; }
-        public Color FontColor_ { get; set; }
-        public Color BorderColor_ { get; set; }
-        public Color BorderItemColor_ { get; set; }
-        public Color OpenMenuColor_ { get; set; }
 
-        /* Menu bool and event */
-        public bool isEditor { get; set; }
+        [Description("Back color menu")]
+        public Color BackColor_ { get; set; }
+
+        [Description("Text color menu")]
+        public Color FontColor_ { get; set; }
+
+        [Description("Menu border color")]
+        public Color BorderColor_ { get; set; }
+
+        [Description("Color hover effect")]
+        public Color BorderItemColor_ { get; set; }
+
+        [Description("BackGround color open menu")]
+        public Color OpenMenuColor_ { get; set; }
 
         #endregion
 
