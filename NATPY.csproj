@@ -59,10 +59,10 @@
       <DependentUpon>NatPyMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="core\controls\NatPyMenu\NatPyMenuColored.cs" />
-    <Compile Include="NatPyEditor.cs">
+    <Compile Include="core\controls\NatPyEditor\NatPyEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NatPyEditor.Designer.cs">
+    <Compile Include="core\controls\NatPyEditor\NatPyEditor.Designer.cs">
       <DependentUpon>NatPyEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -73,7 +73,7 @@
     <EmbeddedResource Include="core\controls\NatPyMenu\NatPyMenu.resx">
       <DependentUpon>NatPyMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NatPyEditor.resx">
+    <EmbeddedResource Include="core\controls\NatPyEditor\NatPyEditor.resx">
       <DependentUpon>NatPyEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -99,7 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="core\controls\NatPyEditor\" />
     <Folder Include="core\controls\NatPyTree\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
