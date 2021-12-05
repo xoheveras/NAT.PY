@@ -14,7 +14,7 @@ You can try something like this too. An example of our implementation
 
 ``` csharp
 
-    editor.SelectionStart = startPos + (match.Index - varable);
+    editor.SelectionStart = startPos + match.Index;
     editor.SelectionLength = match.Length;
     editor.SelectionColor = color;
 
