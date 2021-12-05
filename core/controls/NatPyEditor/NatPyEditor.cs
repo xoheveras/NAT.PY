@@ -33,11 +33,13 @@ namespace NATPY
             this.linesBox.ScrollBars = RichTextBoxScrollBars.None;
             this.panel1.AutoScroll = true;
 
+            highlights.HighlightTexts(this.codeEditor, true);
+
         }
 
         private void EditorTextChanged(object sender, EventArgs e)
         {
-            highlights.HighlightTexts(this.codeEditor);
+            highlights.HighlightTexts(this.codeEditor, false);
         }
     }
 }
