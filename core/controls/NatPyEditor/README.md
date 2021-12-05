@@ -13,16 +13,10 @@ You can try something like this too. An example of our implementation
 <br><br>
 
 ``` csharp
-// Find matches in a string
-Regex regex = new Regex(@"\b(for|while|def\b)");
-MatchCollection keyWordsMatсhes = regex.Matches(text);
 
-// Keyword coloring
-foreach (Match match in keyWordsMatсhes)
-{
-    Editor.Selection.Select(GetTextPointerAtOffset(Editor, match.Index), GetTextPointerAtOffset(Editor, match.index)));
-    Editor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Color.FromRgb(236, 95, 100)));
-}
+    editor.SelectionStart = startPos + (match.Index - varable);
+    editor.SelectionLength = match.Length;
+    editor.SelectionColor = color;
 
 ```
 
