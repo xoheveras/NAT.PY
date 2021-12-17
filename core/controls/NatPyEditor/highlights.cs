@@ -12,7 +12,7 @@ namespace NATPY
     static class highlights
     {
 
-        static public void Colored(RichTextBox editor, string regex, int lineNumber, int startPos, Color color, int varable = 0, bool alltext = false)
+        static public void Colored(RichTextBox editor, string regex, int lineNumber, int startPos, Color color,bool alltext)
         {
             //text for all text
             string text = "";
@@ -20,7 +20,6 @@ namespace NATPY
             if (alltext == false)
                 try
                 {
-
                     text = editor.Lines[lineNumber];
                 }
                 catch { }
@@ -33,11 +32,7 @@ namespace NATPY
 
             foreach (Match match in matches)
             {
-                if (varable > 0)
-                    editor.SelectionStart = startPos + match.Index;
-                else
-                    editor.SelectionStart = startPos + (match.Index - varable);
-
+                editor.SelectionStart = startPos + match.Index;
                 editor.SelectionLength = match.Length;
                 editor.SelectionColor = color;
             }
@@ -53,10 +48,11 @@ namespace NATPY
             Color originalColor = Color.White;
 
 
-            Colored(editor, @".*", posLine, posLineIndex, Color.FromArgb(255, 255, 255),0,alltext);
-            Colored(editor, @"\b(import|from|as|in|with|while|for|)\b", posLine, posLineIndex, Color.FromArgb(166,166,166), 0, alltext);
-            Colored(editor, @"\b\w*[(]", posLine, posLineIndex, Color.FromArgb(166, 166, 166), 0, alltext);
-            Colored(editor, @"\*.+?\*", posLine, posLineIndex, Color.FromArgb(166, 166, 166),1,alltext);
+            Colored(editor, @".*", posLine, posLineIndex, Color.FromArgb(255, 255, 255),alltext);
+            Colored(editor, @"\b(import|from|as|in|with|while|for|break|pass|except|try|finaly|def|return|print|max|min|sort|class|__init__|__str__|
+            else|if|is|lambda|raise|yield|with|assert|continue|elif|global|nonlocal|input)\b", posLine, posLineIndex, Color.FromArgb(127, 41, 206),alltext);
+            Colored(editor, @"#.*|\x22.*\x22|\x27.*\x27|[0-9]|or|not|and|<|>|<=|>=|int|str|float", posLine, posLineIndex, Color.FromArgb(147, 112, 219),alltext);
+            Colored(editor, @"SELECT|WHERE|FROM|UPDATE|DELETE|CREATE", posLine, posLineIndex, Color.FromArgb(255, 160, 122), alltext);
 
             editor.SelectionStart = originalIndex;
             editor.SelectionLength = originalLength;

@@ -60,6 +60,7 @@ namespace NATPY
             this.codeEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(34)))), ((int)(((byte)(42)))));
             this.codeEditor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.codeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.codeEditor.Font = new System.Drawing.Font("Montserrat Medium", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.codeEditor.ForeColor = System.Drawing.Color.White;
             this.codeEditor.Location = new System.Drawing.Point(69, 3);
             this.codeEditor.Name = "codeEditor";
