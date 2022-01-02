@@ -73,10 +73,10 @@
     <Compile Include="core\controls\NatPyTabs\NatPyTabs.Designer.cs">
       <DependentUpon>NatPyTabs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editor.cs">
+    <Compile Include="core\interface\Editor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editor.Designer.cs">
+    <Compile Include="core\interface\Editor.Designer.cs">
       <DependentUpon>Editor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -93,7 +93,7 @@
     <EmbeddedResource Include="core\controls\NatPyMenu\NatPyMenu.resx">
       <DependentUpon>NatPyMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editor.resx">
+    <EmbeddedResource Include="core\interface\Editor.resx">
       <DependentUpon>Editor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
