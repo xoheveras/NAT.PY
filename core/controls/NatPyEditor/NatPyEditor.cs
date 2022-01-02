@@ -43,6 +43,9 @@ namespace NATPY
 
             highlights.HighlightTexts(this.codeEditor, true);
 
+            /* Scroll Bars */
+            this
+
         }
 
         private void EditorTextChanged(object sender, EventArgs e)

@@ -18,5 +18,12 @@ namespace NATPY
             Editor test = new Editor();
             test.Show();
         }
+
+        private void Home_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.Capture = false;
+            Message m = Message.Create(base.Handle, 161, new IntPtr(2), IntPtr.Zero);
+            this.WndProc(ref m);
+        }
     }
 }

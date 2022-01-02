@@ -55,7 +55,7 @@ namespace NATPY
             // natPyEditor1
             // 
             this.natPyEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.natPyEditor1.Location = new System.Drawing.Point(3, 40);
+            this.natPyEditor1.Location = new System.Drawing.Point(58, 40);
             this.natPyEditor1.Name = "natPyEditor1";
             this.natPyEditor1.Size = new System.Drawing.Size(683, 407);
             this.natPyEditor1.TabIndex = 0;
