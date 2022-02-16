@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="core\controls\NatPyEditor\highlights.cs" />
     <Compile Include="core\controls\NatPyEditor\LinesCount.cs" />
+    <Compile Include="core\controls\NatPyTree\NatPyTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="core\controls\NatPyTree\NatPyTree.Designer.cs">
+      <DependentUpon>NatPyTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="core\interface\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <EmbeddedResource Include="core\controls\NatPyTabs\NatPyTabs.resx">
       <DependentUpon>NatPyTabs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="core\controls\NatPyTree\NatPyTree.resx">
+      <DependentUpon>NatPyTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="core\interface\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,9 +128,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="core\controls\NatPyTree\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\close.png" />
   </ItemGroup>

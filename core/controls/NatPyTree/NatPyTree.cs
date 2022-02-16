@@ -8,22 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NATPY
+namespace NATPY.core.controls.NatPyTree
 {
-    public partial class Editor : Form
+    public partial class NatPyTree : UserControl
     {
-        public Editor()
+        public NatPyTree()
         {
             InitializeComponent();
-        }
-
-        private void Editor_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void natPyEditor1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

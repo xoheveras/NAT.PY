@@ -32,6 +32,7 @@ namespace NATPY
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.natPyEditor1 = new NATPY.NatPyEditor();
             this.natPyMenu1 = new NATPY.NatPyMenu();
+            this.natPyTree1 = new NATPY.core.controls.NatPyTree.NatPyTree();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,13 +44,14 @@ namespace NATPY
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.natPyEditor1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.natPyMenu1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.natPyTree1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1230, 724);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // natPyEditor1
@@ -57,8 +59,9 @@ namespace NATPY
             this.natPyEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.natPyEditor1.Location = new System.Drawing.Point(58, 40);
             this.natPyEditor1.Name = "natPyEditor1";
-            this.natPyEditor1.Size = new System.Drawing.Size(683, 407);
+            this.natPyEditor1.Size = new System.Drawing.Size(683, 681);
             this.natPyEditor1.TabIndex = 0;
+            this.natPyEditor1.Load += new System.EventHandler(this.natPyEditor1_Load);
             // 
             // natPyMenu1
             // 
@@ -71,15 +74,24 @@ namespace NATPY
             this.natPyMenu1.Location = new System.Drawing.Point(3, 3);
             this.natPyMenu1.Name = "natPyMenu1";
             this.natPyMenu1.OpenMenuColor_ = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(29)))), ((int)(((byte)(35)))));
-            this.natPyMenu1.Size = new System.Drawing.Size(794, 31);
+            this.natPyMenu1.Size = new System.Drawing.Size(1224, 31);
             this.natPyMenu1.TabIndex = 1;
+            // 
+            // natPyTree1
+            // 
+            this.natPyTree1.AutoScroll = true;
+            this.natPyTree1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.natPyTree1.Location = new System.Drawing.Point(5, 152);
+            this.natPyTree1.Name = "natPyTree1";
+            this.natPyTree1.Size = new System.Drawing.Size(165, 371);
+            this.natPyTree1.TabIndex = 2;
             // 
             // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(34)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1230, 724);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Editor";
             this.Text = "Editor";
@@ -94,5 +106,6 @@ namespace NATPY
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private NatPyEditor natPyEditor1;
         private NatPyMenu natPyMenu1;
+        private core.controls.NatPyTree.NatPyTree natPyTree1;
     }
 }

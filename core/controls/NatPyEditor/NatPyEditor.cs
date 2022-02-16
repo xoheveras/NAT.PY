@@ -44,7 +44,6 @@ namespace NATPY
             highlights.HighlightTexts(this.codeEditor, true);
 
             /* Scroll Bars */
-            this
 
         }
 
